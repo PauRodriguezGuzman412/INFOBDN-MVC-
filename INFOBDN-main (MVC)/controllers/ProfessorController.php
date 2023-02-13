@@ -38,6 +38,8 @@ class professorController {
                 <META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.php?controller=professor&action=mostrarHome">
             <?php
         }else{
+            require_once "views/professor/SignInProfesor.php";
+            
             echo"Error, no hay ningún profesor con esas credenciales";
         }
     }
@@ -88,6 +90,10 @@ class professorController {
         $result= $professor->selectAll();
     }
 
+    public function SignUpProfesor(){
+        require_once "views/admin/SignUpProfesor.php";
+    }
+    
     public function SignUp(){
         if (!empty($_POST['DNI'])) {
             require_once "models/professor.php";
@@ -115,13 +121,10 @@ class professorController {
                 $result= $professor->selectAll();
                 require_once "views/admin/AdminProfesor.php";
             }else{
+                require_once "views/admin/SignUpProfesor.php";
                 echo"Error el dni ya existe";
             }
         }
-    }
-    
-    public function SignUpProfesor(){
-        require_once "views/admin/SignUpProfesor.php";
     }
 
     public function EditProfessor(){

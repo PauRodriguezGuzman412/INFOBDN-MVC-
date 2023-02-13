@@ -1,4 +1,4 @@
-<link href="EditCurso.css" rel="stylesheet" type="text/css">
+<link href="css/EditCurso.css" rel="stylesheet" type="text/css">
 
 <form class='formulario' action="index.php?controller=professor&action=updateAvatar" method="POST" name="InicioSession" ENCTYPE="multipart/form-data">
     <?php

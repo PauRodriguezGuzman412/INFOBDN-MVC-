@@ -1,6 +1,5 @@
 <?php
 class adminController {
-
     public function SignInAdmin(){
         require_once "views/admin/SignInAdmin.php";
     }
@@ -25,6 +24,10 @@ class adminController {
             ?>
                 <META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.php?controller=user&action=mostrarHome">
             <?php
+        }else{
+            require_once "views/admin/SignInAdmin.php";
+
+            echo "Ha habido un error";
         }
     }
 

@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="css/index.css">
 <?php
     if(isset($_SESSION['rol'])){
         if($_SESSION['rol']=='admin'){

@@ -1,4 +1,4 @@
-<link href="cursos.css" rel="stylesheet" type="text/css">           
+<link href="css/cursos.css" rel="stylesheet" type="text/css">           
 <?php
     if($_SESSION['rol']=='profesor'){
         if(isset($llista)){

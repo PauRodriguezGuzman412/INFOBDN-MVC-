@@ -42,8 +42,10 @@ class studentController {
             $llista1 = $student->selectCourseHome();
 
             require_once "views/general/home.php";
-        }else{
-            echo"Error el email ya existe";
+        } else{
+            require_once "views/student/SignUp.php";   
+            
+            echo"Error el email ya existe";        
         }
     }
     
@@ -93,18 +95,21 @@ class studentController {
         $email= $_POST['email'];
         $pass= $_POST['password'];
         
-        $_SESSION['rol']= 'alumno';
         $_SESSION['email']= $email;
 
         $result= $student->SignIn($email, $pass);
         if($result!=false){
+            $_SESSION['rol']= 'alumno';
+            
             $name= $student->getName($email);
             $_SESSION['NombreHeader']= $name[0]['Nom']; 
 
             ?>
                 <META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.php?controller=student&action=mostrarHome">
             <?php
-        }else{
+        } else{
+            require_once "views/student/SignIn.php";
+            
             echo"Error, no hay ningún alumno con esas credenciales";
         }
     }

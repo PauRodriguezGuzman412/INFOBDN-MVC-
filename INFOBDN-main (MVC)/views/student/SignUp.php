@@ -1,4 +1,4 @@
-<link href="SignUp.css" rel="stylesheet" type="text/css">
+<link href="css/SignUp.css" rel="stylesheet" type="text/css">
  
 <form class="formulario" action="index.php?controller=student&action=SignUp" method="POST" name="InicioSession" ENCTYPE="multipart/form-data">
     <h1>Registrarse</h1>

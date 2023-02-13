@@ -1,23 +1,69 @@
 <?php
 require_once("database.php");
 class Student extends Database {
+    private   $email;
     private   $dni;
+    private   $nom;
     private   $password;
+    private   $cognoms;
+    private   $edat;
+    private   $foto;
+    
+    function getEmail() {
+        return $this->email;
+    }
 
     function getDni() {
         return $this->dni;
+    }
+
+    function getNom() {
+        return $this->nom;
     }
 
     function getPassword() {
         return $this->password;
     }
 
+    function getCognoms() {
+        return $this->cognoms;
+    }
+
+    function getEdat() {
+        return $this->edat;
+    }
+
+    function getFoto() {
+        return $this->foto;
+    }
+
+
+    function setEmail($email) {
+        $this->email = $email;
+    }
+
     function setDni($dni) {
         $this->dni = $dni;
     }
 
+    function setNom($nom) {
+        $this->nom = $nom;
+    }
+
     function setPassword($password) {
         $this->password = $password;
+    }
+
+    function setCognoms($cognoms) {
+        $this->cognoms = $cognoms;
+    }
+
+    function setEdat($edat) {
+        $this->edat = $edat;
+    }
+
+    function setFoto($foto) {
+        $this->foto = $foto;
     }
     
     function SignUp($Email, $DNI , $name, $surnames, $pass, $Edat,$directorio){

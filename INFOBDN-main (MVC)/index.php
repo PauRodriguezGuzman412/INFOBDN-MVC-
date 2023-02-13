@@ -17,35 +17,36 @@
     </head>
     <body>
         <?php 
-        require_once "autoload.php";
-        // require_once "views/general/cabecera.html";
-        // require_once "views/general/menu.php";
-        $cont = new UserController();
-        $cont->menu();
-
-
-        if (isset($_GET['controller'])){
-            $nombreController = $_GET['controller']."Controller";
-        }
-        else{
-            //Controlador per defecte
-            $nombreController = "UserController";
-        }
-        if (class_exists($nombreController)){
-            $controlador = new $nombreController();
-            if(isset($_GET['action'])){
-                $action = $_GET['action'];
+        try{
+            require_once "autoload.php";
+            // require_once "views/general/cabecera.html";
+            // require_once "views/general/menu.php";
+            $cont = new UserController();
+            $cont->menu();
+    
+            if (isset($_GET['controller'])){
+                $nombreController = $_GET['controller']."Controller";
+            }else{
+                //Controlador per defecte
+                $nombreController = "UserController";
             }
-            else{
-                // echo "Ola ke ase";
-                $action= "mostrarHome";
+            if (class_exists($nombreController)){
+                $controlador = new $nombreController();
+                if(isset($_GET['action'])){
+                    $action = $_GET['action'];
+                }
+                else{
+                    $action= "mostrarHome";
+                }
+                $controlador->$action();   
+            }else{
+    
+                echo "No existe el controlador";
             }
-            $controlador->$action();   
-        }else{
-
-            echo "No existe el controlador";
+            // require_once "views/general/pie.html";
+        }catch(e){
+            echo "hay un error en la página";
         }
-        // require_once "views/general/pie.html";
         ?>
     </body>
 </html>

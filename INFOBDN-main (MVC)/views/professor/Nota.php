@@ -1,4 +1,4 @@
-<link href="Nota.css" rel="stylesheet" type="text/css">
+<link href="css/Nota.css" rel="stylesheet" type="text/css">
 <div class="content">
 <?php
     if(isset($_SESSION['rol'])){

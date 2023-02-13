@@ -1,4 +1,4 @@
-<link href="PonerNota.css" rel="stylesheet" type="text/css">
+<link href="css/PonerNota.css" rel="stylesheet" type="text/css">
 <?php
     if($_SESSION['rol']=='profesor'){
 ?>

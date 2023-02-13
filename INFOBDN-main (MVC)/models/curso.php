@@ -1,8 +1,81 @@
 <?php
 require_once("database.php");
 class Curso extends Database {
+    private   $codi;
+    private   $nom;
+    private   $descripcion;
+    private   $hores;
+    private   $data_inici;
+    private   $data_final;
+    private   $dni_profesores;
+    private   $activo;
     
+    function getCodi() {
+        return $this->codi;
+    }
 
+    function getNom() {
+        return $this->nom;
+    }
+
+    function getDescripcion() {
+        return $this->descripcion;
+    }
+
+    function getHores() {
+        return $this->hores;
+    }
+
+    function getDataInici() {
+        return $this->data_inici;
+    }
+
+    function getDataFinal() {
+        return $this->data_final;
+    }
+
+    function getDniProfesores() {
+        return $this->dni_profesores;
+    }
+
+    function getActivo() {
+        return $this->activo;
+    }
+
+
+    function setCodi($codi) {
+        $this->codi = $codi;
+    }
+
+    function setDescripcion($descripcion) {
+        $this->descripcion = $descripcion;
+    }
+
+    function setDni($dni) {
+        $this->dni = $dni;
+    }
+
+    function setHores($hores) {
+        $this->hores = $hores;
+    }
+
+    function setDataInici($data_inici) {
+        $this->data_inici = $data_inici;
+    }
+
+    function setDataFinal($data_final) {
+        $this->data_final = $data_final;
+    }
+
+    function setDniProfesor($dni_profesores) {
+        $this->dni_profesores = $dni_profesores;
+    }
+
+    function setActivo($activo) {
+        $this->activo = $activo;
+    }
+
+    
     function validateCurso($Codi, $pass){
         $sql = "SELECT Codi Password FROM administrador WHERE Codi= '$Codi' AND Password= '".md5($pass)."'";
         $result = $this->db->query($sql);

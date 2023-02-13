@@ -1,6 +1,5 @@
 <?php
 class userController {
-
     public function mostrarHome() {
         require_once "views/general/home.php";
     }

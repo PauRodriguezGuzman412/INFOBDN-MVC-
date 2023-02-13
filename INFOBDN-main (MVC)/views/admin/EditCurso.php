@@ -1,4 +1,4 @@
-<link href="EditCurso.css" rel="stylesheet" type="text/css">
+<link href="css/EditCurso.css" rel="stylesheet" type="text/css">
 
 <form class='formulario' action="index.php?controller=curso&action=updateCurso&curso=<?php echo$_GET['curso']?> " method="POST" name="InicioSession">
     <h1>Edit Curso</h1>

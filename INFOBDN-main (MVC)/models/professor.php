@@ -2,6 +2,72 @@
 require_once("database.php");
 class Professor extends Database {
     
+    private   $dni;
+    private   $nom;
+    private   $password;
+    private   $cognoms;
+    private   $titol;
+    private   $foto;
+    private   $activo;
+    
+    function getDni() {
+        return $this->dni;
+    }
+
+    function getNom() {
+        return $this->nom;
+    }
+
+    function getPassword() {
+        return $this->password;
+    }
+
+    function getCognoms() {
+        return $this->cognoms;
+    }
+
+    function getTitol() {
+        return $this->titol;
+    }
+
+    function getFoto() {
+        return $this->foto;
+    }
+
+    function getActivo() {
+        return $this->activo;
+    }
+
+
+
+    function setDni($dni) {
+        $this->dni = $dni;
+    }
+
+    function setNom($nom) {
+        $this->nom = $nom;
+    }
+
+    function setPassword($password) {
+        $this->password = $password;
+    }
+
+    function setCognoms($cognoms) {
+        $this->cognoms = $cognoms;
+    }
+
+    function setTitol($titol) {
+        $this->titol = $titol;
+    }
+
+    function setFoto($foto) {
+        $this->foto = $foto;
+    }
+
+    function setActivo($activo) {
+        $this->activo = $activo;
+    }
+
     
     function validateProfessor($DNI, $pass){
         $sql= "SELECT DNI, Password FROM profesores WHERE DNI= '$DNI' AND activo= 1 AND Password= '".md5($pass)."'";

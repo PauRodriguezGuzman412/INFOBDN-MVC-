@@ -1,13 +1,5 @@
 <?php
 class cursoController {
-    public function SignIncurso(){
-        require_once "views/admin/SignIncurso.php";
-    }
-
-    public function validatecurso(){
-        
-    }
-
     public function buscadorAdmin(){
         require_once "models/curso.php";
         $nom= $_POST['buscador'];
@@ -43,6 +35,8 @@ class cursoController {
                 $result= $curso->selectAll();
                 require_once "views/admin/AdminCurso.php";
             }else{
+                require_once "views/admin/SignUpCurso.php";
+
                 echo "La fecha de inicio es mayor que la fecha final";
             }
         }
@@ -91,6 +85,16 @@ class cursoController {
                 $result= $curso->selectAll();
                 require_once "views/admin/AdminCurso.php";
             }else{
+                require_once "models/professor.php";
+                $row= $curso->selectByCurso($_GET['curso']);
+        
+                $professor = new Professor();
+                $res= $professor->selectDNI();
+                $array2= $professor->selectName();
+                $array= $res[0];
+                $result= $res[1];
+        
+                require_once "views/admin/EditCurso.php";
                 echo "La fecha de inicio es mayor que la fecha final";
             }
         }        

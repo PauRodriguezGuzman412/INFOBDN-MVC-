@@ -1,4 +1,4 @@
-<link href="AdminCurso.css" rel="stylesheet" type="text/css">
+<link href="css/AdminCurso.css" rel="stylesheet" type="text/css">
 <?php
 if(isset($_SESSION['rol'])){
     if($_SESSION['rol']=='admin'){

@@ -1,4 +1,4 @@
-<link href="SignInGeneral.css" rel="stylesheet" type="text/css">
+<link href="css/SignInGeneral.css" rel="stylesheet" type="text/css">
 
 <form class="formulario" action="index.php?controller=student&action=ValidateStudent" method="POST">
     <h1>Iniciar Sessión como alumno</h1>
